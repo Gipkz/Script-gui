@@ -1,0 +1,73 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({IntroText = "Sa zort adam",Name = "Cathe Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Cathe is impostor sussy among us ur under fbi s3x oh mey gad"})
+
+--Value lar
+
+_G.atest = true --tuşun ismi
+
+--function lar
+
+--o tuşun yapçağı script atest
+function atest() --tuşun ismi ve () böyle parantez
+    while _G.atest == true do --bu ise eğer tuş açıldıysa yapılıcak script
+    game:GetService("ReplicatedStorage").normalclick:FireServer()
+    wait(.0001) --burdaki waitin sebebi bazı pclerde çöktüğü için
+    end
+    end
+
+--menü
+local GameTab = Window:MakeTab({
+	Name = "menu 1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--toggle kapatıp açma tuşu ekleme  ekleyeciğiniz şeyin başı menü ismiyle aynı olmalı mesela gametab ile başlama sebebi local dan sonra ismin game tab olması
+GameTab:AddToggle({
+	Name = "Toggle",
+	Default = false,
+	Callback = function(Value)
+_G.atest = Value -- tuşun ismi (baştaki) ve = true
+atest() --tuşun functiondaki ismi
+    end
+})
+
+--tuş ekleme
+GameTab:AddButton({
+	Name = "button",
+	Callback = function()
+--tuşun yapçağı script buraya*
+ 	end    
+})
+
+--yeni menü yeni sim olarak TestTab yaptım diğeriyle farklı olması gerekir bu isim!
+local TestTab = Window:MakeTab({
+	Name = "menu 2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--tuş ayarlama
+TestTab:AddBind({
+	Name = "ustume basarak tus ayarla",
+	Default = Enum.KeyCode.E,
+	Hold = true,
+	Callback = function()
+--tuşa basınınca yaplıcak olan script buraya*
+	end    
+})
+
+TestTab:AddLabel("naber kk yardimci oluyomu?") -- yazı
+
+TestTab:AddParagraph("impostor","is the imposter is SuS? is the imposter is SuS? is the imposter is SuS? is the imposter is SuS? is the imposter is SuS?") -- yazı ama paragraf yani daha uzun yazılar için
+
+OrionLib:MakeNotification({ -- bildirim
+	Name = "UrSuS Impostor", -- bildirim başlığı
+	Content = "Cathe hacked u 1313123", -- içindeki
+	Image = "rbxassetid://4483345998",
+	Time = 20 -- zamanı
+})
+
+OrionLib:Init()-- bitiş zorumlu!!!
+
+task.wait(2)
